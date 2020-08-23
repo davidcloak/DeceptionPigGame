@@ -51,12 +51,22 @@ public class DetermineRole : MonoBehaviour
                 print(players[i] + " you are wolf");
                 players[i].GetComponent<MeshFilter>().mesh = Wolves;
                 players[i].GetComponent<MeshRenderer>().material.SetColor("_Color", Color.red);
+
+                //tells the UI Justin made that its a wolf
+                GameObject wolf = players[i].transform.GetChild(2).gameObject;
+                wolf.GetComponent<DetermineRoleUI>().isPig = false;
+                wolf.GetComponent<DetermineRoleUI>().ShowUI();
             }
             else
             {
                 print(players[i]+" you are pig");
                 players[i].GetComponent<MeshFilter>().mesh = Pigs;
                 players[i].GetComponent<MeshRenderer>().material.SetColor("_Color", Color.blue);
+
+                //tells the UI Justin made that is a pig
+                GameObject pig = players[i].transform.GetChild(2).gameObject;
+                pig.GetComponent<DetermineRoleUI>().isPig = true;
+                pig.GetComponent<DetermineRoleUI>().ShowUI();
             }
         }
     }
