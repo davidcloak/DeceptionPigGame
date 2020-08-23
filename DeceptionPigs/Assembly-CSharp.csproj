@@ -63,8 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Looking.cs" />
-    <Compile Include="Assets\Movement.cs" />
+    <Compile Include="Assets\PlayerMovementScripts\Looking.cs" />
+    <Compile Include="Assets\PlayerMovementScripts\Movement.cs" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\Legacy\CelShader.shader" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShaderLighting.cginc" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShader.shader" />
