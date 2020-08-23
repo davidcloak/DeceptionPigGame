@@ -2066,7 +2066,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e7419df24d9da4099f32f6c38accac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersJoined: 6
+  Pigs: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  Wolves: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  playersJoined: 4
 --- !u!1 &1521765054
 GameObject:
   m_ObjectHideFlags: 0

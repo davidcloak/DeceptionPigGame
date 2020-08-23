@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DetermineRole : MonoBehaviour
 {
+    public Mesh Pigs;
+    public Mesh Wolves;
     public float playersJoined = 6f;
     GameObject[] players;
 
@@ -47,11 +49,13 @@ public class DetermineRole : MonoBehaviour
             if (i == 0 || i == 5)
             {
                 print(players[i] + " you are wolf");
+                players[i].GetComponent<MeshFilter>().mesh = Wolves;
                 players[i].GetComponent<MeshRenderer>().material.SetColor("_Color", Color.red);
             }
             else
             {
                 print(players[i]+" you are pig");
+                players[i].GetComponent<MeshFilter>().mesh = Pigs;
                 players[i].GetComponent<MeshRenderer>().material.SetColor("_Color", Color.blue);
             }
         }
