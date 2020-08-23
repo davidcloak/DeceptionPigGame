@@ -63,8 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Archve\DetermineRoleBackup.cs" />
     <Compile Include="Assets\Scripts\DetermineRole.cs" />
+    <Compile Include="Assets\Scripts\DetermineRoleUI.cs" />
     <Compile Include="Assets\Scripts\Looking.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
