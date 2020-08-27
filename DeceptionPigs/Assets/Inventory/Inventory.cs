@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
         //slots[whatChild].transform.GetChild(0).GetComponent<Image>().color = Color.black;
         for(int i = 0; i < 10; i++)
         {
-            slots[i].transform.GetChild(0).GetComponent<Item>().placeItem(1);
+            slots[i].transform.GetChild(0).GetComponent<Slot>().placeItem(1);
         }
         print(slots[whatChild]);
     }
@@ -54,27 +54,27 @@ public class Inventory : MonoBehaviour
 
     public void InvButtonPressed(int i)
     {
-        if (slots[i].transform.GetChild(0).GetComponent<Item>().hasItem && !mouseHasItem)
+        if (slots[i].transform.GetChild(0).GetComponent<Slot>().hasItem && !mouseHasItem)
         {
-            slots[i].transform.GetChild(0).GetComponent<Item>().giveItem();
+            slots[i].transform.GetChild(0).GetComponent<Slot>().giveItem();
             mouseHasItem = true;
             whereItemWasTaken = i;
-            stack = slots[i].transform.GetChild(0).GetComponent<Item>().stack;
-        }else if (mouseHasItem && !slots[i].transform.GetChild(0).GetComponent<Item>().hasItem)
+            stack = slots[i].transform.GetChild(0).GetComponent<Slot>().stack;
+        }else if (mouseHasItem && !slots[i].transform.GetChild(0).GetComponent<Slot>().hasItem)
         {
-            slots[i].transform.GetChild(0).GetComponent<Item>().placeItem(stack);
+            slots[i].transform.GetChild(0).GetComponent<Slot>().placeItem(stack);
             mouseHasItem = false;
             whereItemWasTaken = 27;
         }
-        else if(mouseHasItem && stack + slots[i].transform.GetChild(0).GetComponent<Item>().stack <= maxStackSize)
+        else if(mouseHasItem && stack + slots[i].transform.GetChild(0).GetComponent<Slot>().stack <= maxStackSize)
         {
-            slots[i].transform.GetChild(0).GetComponent<Item>().placeItem(stack + slots[i].transform.GetChild(0).GetComponent<Item>().stack);
+            slots[i].transform.GetChild(0).GetComponent<Slot>().placeItem(stack + slots[i].transform.GetChild(0).GetComponent<Slot>().stack);
             mouseHasItem = false;
             whereItemWasTaken = 27;
-        }/*else if(mouseHasItem && stack + slots[i].transform.GetChild(0).GetComponent<Item>().stack > maxStackSize)
+        }/*else if(mouseHasItem && stack + slots[i].transform.GetChild(0).GetComponent<Slot>().stack > maxStackSize)
         {
-            slots[i].transform.GetChild(0).GetComponent<Item>().placeItem(5);
-            stack = ((stack + slots[i].transform.GetChild(0).GetComponent<Item>().stack) - 5);
+            slots[i].transform.GetChild(0).GetComponent<Slot>().placeItem(5);
+            stack = ((stack + slots[i].transform.GetChild(0).GetComponent<Slot>().stack) - 5);
             //mouseHasItem = false;
             //whereItemWasTaken = 27;
         }*/
