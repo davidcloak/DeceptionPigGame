@@ -647,6 +647,21 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/Justin Baker/Documents/MadeGames/DeceptionPigGame/DeceptionPigs/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+<<<<<<< Updated upstream
+=======
+    </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>C:/Users/Justin Baker/Documents/MadeGames/DeceptionPigGame/DeceptionPigs/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>C:/Users/Justin Baker/Documents/MadeGames/DeceptionPigGame/DeceptionPigs/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>C:/Users/Justin Baker/Documents/MadeGames/DeceptionPigGame/DeceptionPigs/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>C:/Users/Justin Baker/Documents/MadeGames/DeceptionPigGame/DeceptionPigs/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+>>>>>>> Stashed changes
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
