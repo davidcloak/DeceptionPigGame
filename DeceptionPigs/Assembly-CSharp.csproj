@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Inventory\Inventory.cs" />
+    <Compile Include="Assets\Inventory\Item.cs" />
     <Compile Include="Assets\Scripts\DetermineRole.cs" />
     <Compile Include="Assets\Scripts\DetermineRoleUI.cs" />
     <Compile Include="Assets\Scripts\Looking.cs" />
