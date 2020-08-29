@@ -6,19 +6,24 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     public Sprite UIImage;
+    public float stackLimit = 5f;
+    public string itemName;
 
-    //public MeshFilter ItemMesh;
-    //public MeshRenderer ItemMeshRenderer;
-
-    // Start is called before the first frame update
-    void Start()
+    public void onPickUP()
     {
-        
+        /*
+         * pass info to inventroy in return passes it to the slot
+         * disables its box colider 
+         */
     }
 
-    // Update is called once per frame
-    void Update()
+    public void onDrop()
     {
-        
+        /*
+         * reables its box colider 
+         * spawns it near the player
+         */
     }
+
+
 }

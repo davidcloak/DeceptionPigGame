@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    static GameObject item;
+    public GameObject TheItem;
     public bool hasItem = false;
     public bool isTool = false;
     public float stack = 0;
