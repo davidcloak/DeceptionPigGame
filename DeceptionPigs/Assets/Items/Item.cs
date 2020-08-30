@@ -8,6 +8,12 @@ public class Item : MonoBehaviour
     public Sprite UIImage;
     public float stackLimit = 5f;
     public string itemName;
+    GameObject inventroy;
+
+    private void Start()
+    {
+        inventroy = GameObject.Find("InventoryBackgroundPanel");
+    }
 
     public void onPickUP()
     {
@@ -15,6 +21,7 @@ public class Item : MonoBehaviour
          * pass info to inventroy in return passes it to the slot
          * disables its box colider 
          */
+        gameObject.GetComponent<BoxCollider>().enabled = false;
     }
 
     public void onDrop()
@@ -23,7 +30,16 @@ public class Item : MonoBehaviour
          * reables its box colider 
          * spawns it near the player
          */
+        gameObject.SetActive(false);
+        gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject == GameObject.Find("Player"))
+        {
+            inventroy.GetComponent<Inventory>().PickingUpItem(gameObject);
+            onPickUP();
+        }
+    }
 }

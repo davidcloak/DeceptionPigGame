@@ -14,6 +14,13 @@ public class Looking : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        StartCoroutine(ExecuteAfterTime(0.01f));
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
         inventory = GameObject.Find("InventoryBackgroundPanel");
         inventory.SetActive(false);
     }

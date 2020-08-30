@@ -12,10 +12,10 @@ public class Inventory : MonoBehaviour
     {
         WithForLoop();
         //slots[whatChild].transform.GetChild(0).GetComponent<Image>().color = Color.black;
-        for(int i = 0; i < 10; i++)
+        /*for(int i = 0; i < transform.childCount; i++)
         {
             slots[i].transform.GetChild(0).GetComponent<Slot>().placeItem(1);
-        }
+        }*/
     }
 
     void WithForLoop()
@@ -29,11 +29,7 @@ public class Inventory : MonoBehaviour
         }
     } 
 
-    bool mouseHasItem = false;
-    int whereItemWasTaken = 27;//27 because that slot does not exist
-    float stack = 0;
-
-    public void InvButtonPressed(int i)
+    /*public void InvButtonPressed(int i)
     {
         if (slots[i].transform.GetChild(0).GetComponent<Slot>().hasItem && !mouseHasItem)
         {
@@ -47,24 +43,38 @@ public class Inventory : MonoBehaviour
             mouseHasItem = false;
             whereItemWasTaken = 27;
         }
-        else if(mouseHasItem && stack + slots[i].transform.GetChild(0).GetComponent<Slot>().stack <= /*maxStackSize*/)
+        else if(mouseHasItem && stack + slots[i].transform.GetChild(0).GetComponent<Slot>().stack <= 1*//*maxStackSize*//*)
         {
             slots[i].transform.GetChild(0).GetComponent<Slot>().placeItem(stack + slots[i].transform.GetChild(0).GetComponent<Slot>().stack);
             mouseHasItem = false;
             whereItemWasTaken = 27;
         }
-    }
+    }*/
 
 
     //start here
     public void MouseAction(GameObject slot)
     {
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            print("left "+slot);
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            print("right "+slot);
+        }
     }
 
     public void PickingUpItem(GameObject item)
     {
-
+        for(int i = 0; i < slots.Length; i++)
+        {
+            if (!slots[i].GetComponent<Slot>().hasItem || 
+                (slots[i].GetComponent<Slot>().stack + 1 <= item.GetComponent<Item>().stackLimit))
+            {
+                slots[i].GetComponent<Slot>().AddItem(item, 1);
+            }
+        }
     }
 
     public void TakeItem()
@@ -72,8 +82,8 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void DropItem()
+    public void DropItem(GameObject slot)
     {
-
+        slot.SetActive(true);
     }
 }
